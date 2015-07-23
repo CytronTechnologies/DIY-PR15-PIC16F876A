@@ -1,0 +1,15 @@
+_delay: CODE, 1433 0 35
+__stringtab: STRING, 3 0 6
+__stringdata: STRING, 9 0 34
+_main: CODE, 1654 0 180
+_lcd_clr: CODE, 1328 0 18
+_send_num: CODE, 1834 0 210
+__initialization: CODE, 2044 0 0
+___lwdiv: CODE, 1592 0 62
+_lcd_goto: CODE, 1346 0 22
+_send_string: CODE, 1368 0 32
+_send_config: CODE, 1468 0 36
+___lwmod: CODE, 1540 0 52
+_read_ad: CODE, 1400 0 33
+_send_char: CODE, 1504 0 36
+Total: 756

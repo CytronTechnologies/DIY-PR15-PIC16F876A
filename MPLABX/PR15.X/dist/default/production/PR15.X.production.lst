@@ -1,0 +1,1851 @@
+
+
+Microchip Technology PIC LITE Macro Assembler V1.21 build 54009 
+                                                                                               Wed Jul 22 17:37:07 2015
+
+Microchip Technology Omniscient Code Generator (Lite mode) build 54009
+     1                           	processor	16F876A
+     2                           	opt	pw 120
+     3                           	opt	lm
+     4                           	psect	strings,global,class=STRING,delta=2
+     5                           	psect	cinit,global,class=CODE,merge=1,delta=2
+     6                           	psect	cstackCOMMON,global,class=COMMON,space=1,delta=1
+     7                           	psect	cstackBANK0,global,class=BANK0,space=1,delta=1
+     8                           	psect	maintext,global,class=CODE,split=1,delta=2
+     9                           	psect	text1,local,class=CODE,merge=1,delta=2
+    10                           	psect	text2,local,class=CODE,merge=1,delta=2
+    11                           	psect	text3,local,class=CODE,merge=1,delta=2
+    12                           	psect	text4,local,class=CODE,merge=1,delta=2
+    13                           	psect	text5,local,class=CODE,merge=1,delta=2
+    14                           	psect	text6,local,class=CODE,merge=1,delta=2
+    15                           	psect	text7,local,class=CODE,merge=1,delta=2
+    16                           	psect	text8,local,class=CODE,merge=1,delta=2
+    17                           	psect	text9,local,class=CODE,merge=1,delta=2
+    18                           	psect	text10,local,class=CODE,merge=1,delta=2
+    19                           	dabs	1,0x7E,2
+    20  0000                     	;# 
+    21  0001                     	;# 
+    22  0002                     	;# 
+    23  0003                     	;# 
+    24  0004                     	;# 
+    25  0005                     	;# 
+    26  0006                     	;# 
+    27  0007                     	;# 
+    28  000A                     	;# 
+    29  000B                     	;# 
+    30  000C                     	;# 
+    31  000D                     	;# 
+    32  000E                     	;# 
+    33  000E                     	;# 
+    34  000F                     	;# 
+    35  0010                     	;# 
+    36  0011                     	;# 
+    37  0012                     	;# 
+    38  0013                     	;# 
+    39  0014                     	;# 
+    40  0015                     	;# 
+    41  0015                     	;# 
+    42  0016                     	;# 
+    43  0017                     	;# 
+    44  0018                     	;# 
+    45  0019                     	;# 
+    46  001A                     	;# 
+    47  001B                     	;# 
+    48  001B                     	;# 
+    49  001C                     	;# 
+    50  001D                     	;# 
+    51  001E                     	;# 
+    52  001F                     	;# 
+    53  0081                     	;# 
+    54  0085                     	;# 
+    55  0086                     	;# 
+    56  0087                     	;# 
+    57  008C                     	;# 
+    58  008D                     	;# 
+    59  008E                     	;# 
+    60  0091                     	;# 
+    61  0092                     	;# 
+    62  0093                     	;# 
+    63  0094                     	;# 
+    64  0098                     	;# 
+    65  0099                     	;# 
+    66  009C                     	;# 
+    67  009D                     	;# 
+    68  009E                     	;# 
+    69  009F                     	;# 
+    70  010C                     	;# 
+    71  010D                     	;# 
+    72  010E                     	;# 
+    73  010F                     	;# 
+    74  018C                     	;# 
+    75  018D                     	;# 
+    76  001F                     _ADCON0	set	31
+    77  001E                     _ADRESH	set	30
+    78  0007                     _PORTC	set	7
+    79  00FB                     _CHS0	set	251
+    80  00FC                     _CHS1	set	252
+    81  00FD                     _CHS2	set	253
+    82  00FA                     _GO	set	250
+    83  002A                     _RA2	set	42
+    84  002D                     _RA5	set	45
+    85  0030                     _RB0	set	48
+    86  0031                     _RB1	set	49
+    87  0032                     _RB2	set	50
+    88  0033                     _RB3	set	51
+    89  0034                     _RB4	set	52
+    90  0035                     _RB5	set	53
+    91  009F                     _ADCON1	set	159
+    92  0085                     _TRISA	set	133
+    93  0086                     _TRISB	set	134
+    94  0087                     _TRISC	set	135
+    95                           
+    96                           	psect	strings
+    97  0003                     __pstrings:	
+    98  0003                     stringtab:	
+    99  0003                     __stringtab:	
+   100  0003                     stringcode:	
+   101                           ;	String table - string pointers are 1 byte each
+   102                           
+   103  0003                     stringdir:	
+   104  0003  3000               	movlw	high stringdir
+   105  0004  008A               	movwf	10
+   106  0005  0804               	movf	4,w
+   107  0006  0A84               	incf	4,f
+   108  0007  0782               	addwf	2,f
+   109  0008                     __stringbase:	
+   110  0008  3400               	retlw	0
+   111  0009                     __end_of__stringtab:	
+   112  0009                     __stringdata:	
+   113  0009                     STR_1:	
+   114  0009  3447               	retlw	71	;'G'
+   115  000A  3461               	retlw	97	;'a'
+   116  000B  3473               	retlw	115	;'s'
+   117  000C  3420               	retlw	32	;' '
+   118  000D  3453               	retlw	83	;'S'
+   119  000E  3465               	retlw	101	;'e'
+   120  000F  346E               	retlw	110	;'n'
+   121  0010  3473               	retlw	115	;'s'
+   122  0011  346F               	retlw	111	;'o'
+   123  0012  3472               	retlw	114	;'r'
+   124  0013  3420               	retlw	32	;' '
+   125  0014  3420               	retlw	32	;' '
+   126  0015  3420               	retlw	32	;' '
+   127  0016  3420               	retlw	32	;' '
+   128  0017  3420               	retlw	32	;' '
+   129  0018  3420               	retlw	32	;' '
+   130  0019  3400               	retlw	0
+   131  001A                     STR_2:	
+   132  001A  3448               	retlw	72	;'H'
+   133  001B  3475               	retlw	117	;'u'
+   134  001C  346D               	retlw	109	;'m'
+   135  001D  3469               	retlw	105	;'i'
+   136  001E  3464               	retlw	100	;'d'
+   137  001F  3469               	retlw	105	;'i'
+   138  0020  3474               	retlw	116	;'t'
+   139  0021  3479               	retlw	121	;'y'
+   140  0022  3420               	retlw	32	;' '
+   141  0023  3453               	retlw	83	;'S'
+   142  0024  3465               	retlw	101	;'e'
+   143  0025  346E               	retlw	110	;'n'
+   144  0026  3473               	retlw	115	;'s'
+   145  0027  346F               	retlw	111	;'o'
+   146  0028  3472               	retlw	114	;'r'
+   147  0029  3420               	retlw	32	;' '
+   148  002A  3400               	retlw	0
+   149  002B                     __end_of__stringdata:	
+   150                           
+   151                           ; #config settings
+   152  0000                     
+   153                           	psect	cinit
+   154  07FC                     start_initialization:	
+   155  07FC                     __initialization:	
+   156  07FC                     end_of_initialization:	
+   157                           ;End of C runtime variable initialization code
+   158                           
+   159  07FC                     __end_of__initialization:	
+   160  07FC  0183               	clrf	3
+   161  07FD  120A  118A  2E76   	ljmp	_main	;jump to C main() function
+   162                           
+   163                           	psect	cstackCOMMON
+   164  0070                     __pcstackCOMMON:	
+   165  0070                     ?_send_config:	
+   166  0070                     ?_lcd_clr:	
+   167                           ; 0 bytes @ 0x0
+   168                           
+   169  0070                     ?_lcd_goto:	
+   170                           ; 0 bytes @ 0x0
+   171                           
+   172  0070                     ?_send_string:	
+   173                           ; 0 bytes @ 0x0
+   174                           
+   175  0070                     ??_read_ad:	
+   176                           ; 0 bytes @ 0x0
+   177                           
+   178  0070                     ?_main:	
+   179                           ; 0 bytes @ 0x0
+   180                           
+   181  0070                     ?_delay:	
+   182                           ; 0 bytes @ 0x0
+   183                           
+   184  0070                     ?_send_char:	
+   185                           ; 0 bytes @ 0x0
+   186                           
+   187  0070                     ?_read_ad:	
+   188                           ; 0 bytes @ 0x0
+   189                           
+   190  0070                     ?___lwdiv:	
+   191                           ; 1 bytes @ 0x0
+   192                           
+   193  0070                     ?___lwmod:	
+   194                           ; 2 bytes @ 0x0
+   195                           
+   196  0070                     ___lwdiv@divisor:	
+   197                           ; 2 bytes @ 0x0
+   198                           
+   199  0070                     ___lwmod@divisor:	
+   200                           ; 2 bytes @ 0x0
+   201                           
+   202  0070                     delay@data:	
+   203                           ; 2 bytes @ 0x0
+   204                           
+   205                           
+   206                           ; 4 bytes @ 0x0
+   207  0070                     	ds	1
+   208  0071                     read_ad@channel:	
+   209                           
+   210                           ; 1 bytes @ 0x1
+   211  0071                     	ds	1
+   212  0072                     read_ad@result:	
+   213  0072                     ___lwdiv@dividend:	
+   214                           ; 1 bytes @ 0x2
+   215                           
+   216  0072                     ___lwmod@dividend:	
+   217                           ; 2 bytes @ 0x2
+   218                           
+   219                           
+   220                           ; 2 bytes @ 0x2
+   221  0072                     	ds	2
+   222  0074                     ??_delay:	
+   223  0074                     ??___lwdiv:	
+   224                           ; 0 bytes @ 0x4
+   225                           
+   226  0074                     ??___lwmod:	
+   227                           ; 0 bytes @ 0x4
+   228                           
+   229                           
+   230                           ; 0 bytes @ 0x4
+   231  0074                     	ds	1
+   232  0075                     ___lwmod@counter:	
+   233  0075                     ___lwdiv@quotient:	
+   234                           ; 1 bytes @ 0x5
+   235                           
+   236                           
+   237                           ; 2 bytes @ 0x5
+   238  0075                     	ds	2
+   239  0077                     ___lwdiv@counter:	
+   240                           
+   241                           ; 1 bytes @ 0x7
+   242  0077                     	ds	1
+   243  0078                     ??_send_config:	
+   244  0078                     ??_send_char:	
+   245                           ; 0 bytes @ 0x8
+   246                           
+   247  0078                     send_config@data:	
+   248                           ; 0 bytes @ 0x8
+   249                           
+   250  0078                     send_char@data:	
+   251                           ; 1 bytes @ 0x8
+   252                           
+   253                           
+   254                           ; 1 bytes @ 0x8
+   255  0078                     	ds	1
+   256  0079                     ??_lcd_clr:	
+   257  0079                     ??_lcd_goto:	
+   258                           ; 0 bytes @ 0x9
+   259                           
+   260  0079                     ??_send_string:	
+   261                           ; 0 bytes @ 0x9
+   262                           
+   263  0079                     ?_send_num:	
+   264                           ; 0 bytes @ 0x9
+   265                           
+   266  0079                     send_num@data:	
+   267                           ; 0 bytes @ 0x9
+   268                           
+   269                           
+   270                           ; 2 bytes @ 0x9
+   271  0079                     	ds	1
+   272  007A                     lcd_goto@data:	
+   273  007A                     send_string@i:	
+   274                           ; 1 bytes @ 0xA
+   275                           
+   276                           
+   277                           ; 1 bytes @ 0xA
+   278  007A                     	ds	1
+   279  007B                     ??_send_num:	
+   280  007B                     send_string@s:	
+   281                           ; 0 bytes @ 0xB
+   282                           
+   283                           
+   284                           ; 1 bytes @ 0xB
+   285  007B                     	ds	1
+   286  007C                     ??_main:	
+   287                           
+   288                           ; 0 bytes @ 0xC
+   289  007C                     	ds	2
+   290                           
+   291                           	psect	cstackBANK0
+   292  0020                     __pcstackBANK0:	
+   293  0020                     send_num@tenthou:	
+   294                           
+   295                           ; 1 bytes @ 0x0
+   296  0020                     	ds	1
+   297  0021                     send_num@thou:	
+   298                           
+   299                           ; 1 bytes @ 0x1
+   300  0021                     	ds	1
+   301  0022                     send_num@hund:	
+   302                           
+   303                           ; 1 bytes @ 0x2
+   304  0022                     	ds	1
+   305  0023                     send_num@tenth:	
+   306                           
+   307                           ; 1 bytes @ 0x3
+   308  0023                     	ds	1
+   309  0024                     main@temp:	
+   310                           
+   311                           ; 1 bytes @ 0x4
+   312  0024                     	ds	1
+   313  0025                     main@mode:	
+   314                           
+   315                           ; 1 bytes @ 0x5
+   316  0025                     	ds	1
+   317                           
+   318                           	psect	maintext
+   319  0676                     __pmaintext:	
+   320 ;;
+   321 ;;Main: autosize = 0, tempsize = 2, incstack = 0, save=0
+   322 ;;
+   323 ;; *************** function _main *****************
+   324 ;; Defined at:
+   325 ;;		line 67 in file "../../Source File/PR15.c"
+   326 ;; Parameters:    Size  Location     Type
+   327 ;;		None
+   328 ;; Auto vars:     Size  Location     Type
+   329 ;;  mode            1    5[BANK0 ] unsigned char 
+   330 ;;  temp            1    4[BANK0 ] unsigned char 
+   331 ;; Return value:  Size  Location     Type
+   332 ;;		None               void
+   333 ;; Registers used:
+   334 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+   335 ;; Tracked objects:
+   336 ;;		On entry : 17F/0
+   337 ;;		On exit  : 0/0
+   338 ;;		Unchanged: 0/0
+   339 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   340 ;;      Params:         0       0       0       0       0
+   341 ;;      Locals:         0       2       0       0       0
+   342 ;;      Temps:          2       0       0       0       0
+   343 ;;      Totals:         2       2       0       0       0
+   344 ;;Total ram usage:        4 bytes
+   345 ;; Hardware stack levels required when called:    3
+   346 ;; This function calls:
+   347 ;;		_send_config
+   348 ;;		_lcd_clr
+   349 ;;		_lcd_goto
+   350 ;;		_send_string
+   351 ;;		_read_ad
+   352 ;;		_send_num
+   353 ;; This function is called by:
+   354 ;;		Startup code after reset
+   355 ;; This function uses a non-reentrant model
+   356 ;;
+   357                           
+   358                           
+   359                           ;psect for function _main
+   360  0676                     _main:	
+   361                           
+   362                           ;PR15.c: 69: unsigned char temp;
+   363                           ;PR15.c: 70: unsigned char mode;
+   364                           ;PR15.c: 73: TRISB = 0b11110000;
+   365                           
+   366                           ;incstack = 0
+   367                           ; Regs used in _main: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+   368  0676  30F0               	movlw	240
+   369  0677  1683               	bsf	3,5	;RP0=1, select bank1
+   370  0678  1303               	bcf	3,6	;RP1=0, select bank1
+   371  0679  0086               	movwf	6	;volatile
+   372                           
+   373                           ;PR15.c: 74: TRISA = 0b11011011;
+   374  067A  30DB               	movlw	219
+   375  067B  0085               	movwf	5	;volatile
+   376                           
+   377                           ;PR15.c: 75: TRISC = 0b00000000;
+   378  067C  0187               	clrf	7	;volatile
+   379                           
+   380                           ;PR15.c: 78: send_config(0b00000001);
+   381  067D  3001               	movlw	1
+   382  067E  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+   383                           
+   384                           ;PR15.c: 79: send_config(0b00000010);
+   385  0683  3002               	movlw	2
+   386  0684  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+   387                           
+   388                           ;PR15.c: 80: send_config(0b00000110);
+   389  0689  3006               	movlw	6
+   390  068A  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+   391                           
+   392                           ;PR15.c: 81: send_config(0b00001100);
+   393  068F  300C               	movlw	12
+   394  0690  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+   395                           
+   396                           ;PR15.c: 82: send_config(0b00111000);
+   397  0695  3038               	movlw	56
+   398  0696  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+   399                           
+   400                           ;PR15.c: 85: ADCON0=0b10000001;
+   401  069B  3081               	movlw	129
+   402  069C  1283               	bcf	3,5	;RP0=0, select bank0
+   403  069D  1303               	bcf	3,6	;RP1=0, select bank0
+   404  069E  009F               	movwf	31	;volatile
+   405                           
+   406                           ;PR15.c: 86: ADCON1=0b01000100;
+   407  069F  3044               	movlw	68
+   408  06A0  1683               	bsf	3,5	;RP0=1, select bank1
+   409  06A1  1303               	bcf	3,6	;RP1=0, select bank1
+   410  06A2  009F               	movwf	31	;volatile
+   411                           
+   412                           ;PR15.c: 89: RB0=1;
+   413  06A3  1283               	bcf	3,5	;RP0=0, select bank0
+   414  06A4  1303               	bcf	3,6	;RP1=0, select bank0
+   415  06A5  1406               	bsf	6,0	;volatile
+   416                           
+   417                           ;PR15.c: 90: lcd_clr();
+   418  06A6  120A  118A  2530   	fcall	_lcd_clr
+      +       120A  118A         
+   419                           
+   420                           ;PR15.c: 91: lcd_goto(0);
+   421  06AB  3000               	movlw	0
+   422  06AC  120A  118A  2542   	fcall	_lcd_goto
+      +       120A  118A         
+   423                           
+   424                           ;PR15.c: 93: mode=1;
+   425  06B1  1283               	bcf	3,5	;RP0=0, select bank0
+   426  06B2  1303               	bcf	3,6	;RP1=0, select bank0
+   427  06B3  01A5               	clrf	main@mode
+   428  06B4  0AA5               	incf	main@mode,f
+   429                           
+   430                           ;PR15.c: 94: RA2=1;
+   431  06B5  1505               	bsf	5,2	;volatile
+   432                           
+   433                           ;PR15.c: 95: RA5=0;
+   434  06B6  1285               	bcf	5,5	;volatile
+   435  06B7                     l1007:	
+   436                           ;PR15.c: 97: while(1)
+   437                           
+   438                           
+   439                           ;PR15.c: 98: {
+   440                           ;PR15.c: 99: if(RB5==0)
+   441  06B7  1283               	bcf	3,5	;RP0=0, select bank0
+   442  06B8  1303               	bcf	3,6	;RP1=0, select bank0
+   443  06B9  1A86               	btfsc	6,5	;volatile
+   444  06BA  2EC0               	goto	l54
+   445                           
+   446                           ;PR15.c: 100: {
+   447                           ;PR15.c: 101: mode=1;
+   448  06BB  01A5               	clrf	main@mode
+   449  06BC  0AA5               	incf	main@mode,f
+   450                           
+   451                           ;PR15.c: 102: RA5=0;
+   452  06BD  1285               	bcf	5,5	;volatile
+   453                           
+   454                           ;PR15.c: 103: RA2=1;
+   455  06BE  1505               	bsf	5,2	;volatile
+   456                           
+   457                           ;PR15.c: 104: }
+   458  06BF  2EC8               	goto	l55
+   459  06C0                     l54:	
+   460                           
+   461                           ;PR15.c: 105: else if(RB4==0)
+   462  06C0  1A06               	btfsc	6,4	;volatile
+   463  06C1  2EC8               	goto	l55
+   464                           
+   465                           ;PR15.c: 106: {
+   466                           ;PR15.c: 107: mode=2;
+   467  06C2  3002               	movlw	2
+   468  06C3  00FC               	movwf	??_main
+   469  06C4  087C               	movf	??_main,w
+   470  06C5  00A5               	movwf	main@mode
+   471                           
+   472                           ;PR15.c: 108: RA2=0;
+   473  06C6  1105               	bcf	5,2	;volatile
+   474                           
+   475                           ;PR15.c: 109: RA5=1;
+   476  06C7  1685               	bsf	5,5	;volatile
+   477  06C8                     l55:	
+   478                           
+   479                           ;PR15.c: 110: }
+   480                           ;PR15.c: 112: if(mode==1)
+   481  06C8  0825               	movf	main@mode,w
+   482  06C9  3A01               	xorlw	1
+   483  06CA  1D03               	skipz
+   484  06CB  2EF8               	goto	l1023
+   485                           
+   486                           ;PR15.c: 113: {
+   487                           ;PR15.c: 114: lcd_goto(0);
+   488  06CC  3000               	movlw	0
+   489  06CD  120A  118A  2542   	fcall	_lcd_goto
+      +       120A  118A         
+   490                           
+   491                           ;PR15.c: 115: send_string("Gas Sensor      ");
+   492  06D2  3001               	movlw	(STR_1-__stringbase)& (0+255)
+   493  06D3  120A  118A  2558   	fcall	_send_string
+      +       120A  118A         
+   494                           
+   495                           ;PR15.c: 116: temp=read_ad(0);
+   496  06D8  3000               	movlw	0
+   497  06D9  120A  118A  2578   	fcall	_read_ad
+      +       120A  118A         
+   498  06DE  00FC               	movwf	??_main
+   499  06DF  087C               	movf	??_main,w
+   500  06E0  1283               	bcf	3,5	;RP0=0, select bank0
+   501  06E1  1303               	bcf	3,6	;RP1=0, select bank0
+   502  06E2  00A4               	movwf	main@temp
+   503                           
+   504                           ;PR15.c: 117: lcd_goto(20);
+   505  06E3  3014               	movlw	20
+   506  06E4  120A  118A  2542   	fcall	_lcd_goto
+      +       120A  118A         
+   507                           
+   508                           ;PR15.c: 118: send_num(temp);
+   509  06E9  1283               	bcf	3,5	;RP0=0, select bank0
+   510  06EA  1303               	bcf	3,6	;RP1=0, select bank0
+   511  06EB  0824               	movf	main@temp,w
+   512  06EC  00FC               	movwf	??_main
+   513  06ED  01FD               	clrf	??_main+1
+   514  06EE  087C               	movf	??_main,w
+   515  06EF  00F9               	movwf	?_send_num
+   516  06F0  087D               	movf	??_main+1,w
+   517  06F1  00FA               	movwf	?_send_num+1
+   518  06F2  120A  118A  272A   	fcall	_send_num
+      +       120A  118A         
+   519                           
+   520                           ;PR15.c: 119: }
+   521  06F7  2EB7               	goto	l1007
+   522  06F8                     l1023:	
+   523                           
+   524                           ;PR15.c: 120: else if(mode==2)
+   525  06F8  1283               	bcf	3,5	;RP0=0, select bank0
+   526  06F9  1303               	bcf	3,6	;RP1=0, select bank0
+   527  06FA  0825               	movf	main@mode,w
+   528  06FB  3A02               	xorlw	2
+   529  06FC  1D03               	skipz
+   530  06FD  2EB7               	goto	l1007
+   531                           
+   532                           ;PR15.c: 121: {
+   533                           ;PR15.c: 122: lcd_goto(0);
+   534  06FE  3000               	movlw	0
+   535  06FF  120A  118A  2542   	fcall	_lcd_goto
+      +       120A  118A         
+   536                           
+   537                           ;PR15.c: 123: send_string("Humidity Sensor ");
+   538  0704  3012               	movlw	(STR_2-__stringbase)& (0+255)
+   539  0705  120A  118A  2558   	fcall	_send_string
+      +       120A  118A         
+   540                           
+   541                           ;PR15.c: 124: temp=read_ad(1);
+   542  070A  3001               	movlw	1
+   543  070B  120A  118A  2578   	fcall	_read_ad
+      +       120A  118A         
+   544  0710  00FC               	movwf	??_main
+   545  0711  087C               	movf	??_main,w
+   546  0712  1283               	bcf	3,5	;RP0=0, select bank0
+   547  0713  1303               	bcf	3,6	;RP1=0, select bank0
+   548  0714  00A4               	movwf	main@temp
+   549                           
+   550                           ;PR15.c: 125: lcd_goto(20);
+   551  0715  3014               	movlw	20
+   552  0716  120A  118A  2542   	fcall	_lcd_goto
+      +       120A  118A         
+   553                           
+   554                           ;PR15.c: 126: send_num(temp);
+   555  071B  1283               	bcf	3,5	;RP0=0, select bank0
+   556  071C  1303               	bcf	3,6	;RP1=0, select bank0
+   557  071D  0824               	movf	main@temp,w
+   558  071E  00FC               	movwf	??_main
+   559  071F  01FD               	clrf	??_main+1
+   560  0720  087C               	movf	??_main,w
+   561  0721  00F9               	movwf	?_send_num
+   562  0722  087D               	movf	??_main+1,w
+   563  0723  00FA               	movwf	?_send_num+1
+   564  0724  120A  118A  272A   	fcall	_send_num
+      +       120A  118A         
+   565  0729  2EB7               	goto	l1007
+   566  072A                     __end_of_main:	
+   567                           
+   568                           	psect	text1
+   569  072A                     __ptext1:	
+   570 ;; *************** function _send_num *****************
+   571 ;; Defined at:
+   572 ;;		line 189 in file "../../Source File/PR15.c"
+   573 ;; Parameters:    Size  Location     Type
+   574 ;;  data            2    9[COMMON] unsigned short 
+   575 ;; Auto vars:     Size  Location     Type
+   576 ;;  tenth           1    3[BANK0 ] unsigned char 
+   577 ;;  hund            1    2[BANK0 ] unsigned char 
+   578 ;;  thou            1    1[BANK0 ] unsigned char 
+   579 ;;  tenthou         1    0[BANK0 ] unsigned char 
+   580 ;; Return value:  Size  Location     Type
+   581 ;;		None               void
+   582 ;; Registers used:
+   583 ;;		wreg, status,2, status,0, pclath, cstack
+   584 ;; Tracked objects:
+   585 ;;		On entry : 0/0
+   586 ;;		On exit  : 0/0
+   587 ;;		Unchanged: 0/0
+   588 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   589 ;;      Params:         2       0       0       0       0
+   590 ;;      Locals:         0       4       0       0       0
+   591 ;;      Temps:          1       0       0       0       0
+   592 ;;      Totals:         3       4       0       0       0
+   593 ;;Total ram usage:        7 bytes
+   594 ;; Hardware stack levels used:    1
+   595 ;; Hardware stack levels required when called:    2
+   596 ;; This function calls:
+   597 ;;		_send_char
+   598 ;;		___lwdiv
+   599 ;;		___lwmod
+   600 ;; This function is called by:
+   601 ;;		_main
+   602 ;; This function uses a non-reentrant model
+   603 ;;
+   604                           
+   605                           
+   606                           ;psect for function _send_num
+   607  072A                     _send_num:	
+   608                           
+   609                           ;PR15.c: 190: unsigned char tenthou,thou,hund,tenth;
+   610                           ;PR15.c: 192: tenthou=data/10000;
+   611                           
+   612                           ;incstack = 0
+   613                           ; Regs used in _send_num: [wreg+status,2+status,0+pclath+cstack]
+   614  072A  3010               	movlw	16
+   615  072B  00F0               	movwf	?___lwdiv
+   616  072C  3027               	movlw	39
+   617  072D  00F1               	movwf	?___lwdiv+1
+   618  072E  087A               	movf	send_num@data+1,w
+   619  072F  01F3               	clrf	?___lwdiv+3
+   620  0730  07F3               	addwf	?___lwdiv+3,f
+   621  0731  0879               	movf	send_num@data,w
+   622  0732  01F2               	clrf	?___lwdiv+2
+   623  0733  07F2               	addwf	?___lwdiv+2,f
+   624  0734  120A  118A  2638   	fcall	___lwdiv
+      +       120A  118A         
+   625  0739  0870               	movf	?___lwdiv,w
+   626  073A  00FB               	movwf	??_send_num
+   627  073B  087B               	movf	??_send_num,w
+   628  073C  1283               	bcf	3,5	;RP0=0, select bank0
+   629  073D  1303               	bcf	3,6	;RP1=0, select bank0
+   630  073E  00A0               	movwf	send_num@tenthou
+   631                           
+   632                           ;PR15.c: 193: data=data%10000;
+   633  073F  3010               	movlw	16
+   634  0740  00F0               	movwf	?___lwmod
+   635  0741  3027               	movlw	39
+   636  0742  00F1               	movwf	?___lwmod+1
+   637  0743  087A               	movf	send_num@data+1,w
+   638  0744  01F3               	clrf	?___lwmod+3
+   639  0745  07F3               	addwf	?___lwmod+3,f
+   640  0746  0879               	movf	send_num@data,w
+   641  0747  01F2               	clrf	?___lwmod+2
+   642  0748  07F2               	addwf	?___lwmod+2,f
+   643  0749  120A  118A  2604   	fcall	___lwmod
+      +       120A  118A         
+   644  074E  0871               	movf	?___lwmod+1,w
+   645  074F  01FA               	clrf	send_num@data+1
+   646  0750  07FA               	addwf	send_num@data+1,f
+   647  0751  0870               	movf	?___lwmod,w
+   648  0752  01F9               	clrf	send_num@data
+   649  0753  07F9               	addwf	send_num@data,f
+   650                           
+   651                           ;PR15.c: 194: thou=data/1000;
+   652  0754  30E8               	movlw	232
+   653  0755  00F0               	movwf	?___lwdiv
+   654  0756  3003               	movlw	3
+   655  0757  00F1               	movwf	?___lwdiv+1
+   656  0758  087A               	movf	send_num@data+1,w
+   657  0759  01F3               	clrf	?___lwdiv+3
+   658  075A  07F3               	addwf	?___lwdiv+3,f
+   659  075B  0879               	movf	send_num@data,w
+   660  075C  01F2               	clrf	?___lwdiv+2
+   661  075D  07F2               	addwf	?___lwdiv+2,f
+   662  075E  120A  118A  2638   	fcall	___lwdiv
+      +       120A  118A         
+   663  0763  0870               	movf	?___lwdiv,w
+   664  0764  00FB               	movwf	??_send_num
+   665  0765  087B               	movf	??_send_num,w
+   666  0766  1283               	bcf	3,5	;RP0=0, select bank0
+   667  0767  1303               	bcf	3,6	;RP1=0, select bank0
+   668  0768  00A1               	movwf	send_num@thou
+   669                           
+   670                           ;PR15.c: 195: data=data%1000;
+   671  0769  30E8               	movlw	232
+   672  076A  00F0               	movwf	?___lwmod
+   673  076B  3003               	movlw	3
+   674  076C  00F1               	movwf	?___lwmod+1
+   675  076D  087A               	movf	send_num@data+1,w
+   676  076E  01F3               	clrf	?___lwmod+3
+   677  076F  07F3               	addwf	?___lwmod+3,f
+   678  0770  0879               	movf	send_num@data,w
+   679  0771  01F2               	clrf	?___lwmod+2
+   680  0772  07F2               	addwf	?___lwmod+2,f
+   681  0773  120A  118A  2604   	fcall	___lwmod
+      +       120A  118A         
+   682  0778  0871               	movf	?___lwmod+1,w
+   683  0779  01FA               	clrf	send_num@data+1
+   684  077A  07FA               	addwf	send_num@data+1,f
+   685  077B  0870               	movf	?___lwmod,w
+   686  077C  01F9               	clrf	send_num@data
+   687  077D  07F9               	addwf	send_num@data,f
+   688                           
+   689                           ;PR15.c: 196: hund=data/100;
+   690  077E  3064               	movlw	100
+   691  077F  00F0               	movwf	?___lwdiv
+   692  0780  3000               	movlw	0
+   693  0781  00F1               	movwf	?___lwdiv+1
+   694  0782  087A               	movf	send_num@data+1,w
+   695  0783  01F3               	clrf	?___lwdiv+3
+   696  0784  07F3               	addwf	?___lwdiv+3,f
+   697  0785  0879               	movf	send_num@data,w
+   698  0786  01F2               	clrf	?___lwdiv+2
+   699  0787  07F2               	addwf	?___lwdiv+2,f
+   700  0788  120A  118A  2638   	fcall	___lwdiv
+      +       120A  118A         
+   701  078D  0870               	movf	?___lwdiv,w
+   702  078E  00FB               	movwf	??_send_num
+   703  078F  087B               	movf	??_send_num,w
+   704  0790  1283               	bcf	3,5	;RP0=0, select bank0
+   705  0791  1303               	bcf	3,6	;RP1=0, select bank0
+   706  0792  00A2               	movwf	send_num@hund
+   707                           
+   708                           ;PR15.c: 197: data=data%100;
+   709  0793  3064               	movlw	100
+   710  0794  00F0               	movwf	?___lwmod
+   711  0795  3000               	movlw	0
+   712  0796  00F1               	movwf	?___lwmod+1
+   713  0797  087A               	movf	send_num@data+1,w
+   714  0798  01F3               	clrf	?___lwmod+3
+   715  0799  07F3               	addwf	?___lwmod+3,f
+   716  079A  0879               	movf	send_num@data,w
+   717  079B  01F2               	clrf	?___lwmod+2
+   718  079C  07F2               	addwf	?___lwmod+2,f
+   719  079D  120A  118A  2604   	fcall	___lwmod
+      +       120A  118A         
+   720  07A2  0871               	movf	?___lwmod+1,w
+   721  07A3  01FA               	clrf	send_num@data+1
+   722  07A4  07FA               	addwf	send_num@data+1,f
+   723  07A5  0870               	movf	?___lwmod,w
+   724  07A6  01F9               	clrf	send_num@data
+   725  07A7  07F9               	addwf	send_num@data,f
+   726                           
+   727                           ;PR15.c: 198: tenth=data/10;
+   728  07A8  300A               	movlw	10
+   729  07A9  00F0               	movwf	?___lwdiv
+   730  07AA  3000               	movlw	0
+   731  07AB  00F1               	movwf	?___lwdiv+1
+   732  07AC  087A               	movf	send_num@data+1,w
+   733  07AD  01F3               	clrf	?___lwdiv+3
+   734  07AE  07F3               	addwf	?___lwdiv+3,f
+   735  07AF  0879               	movf	send_num@data,w
+   736  07B0  01F2               	clrf	?___lwdiv+2
+   737  07B1  07F2               	addwf	?___lwdiv+2,f
+   738  07B2  120A  118A  2638   	fcall	___lwdiv
+      +       120A  118A         
+   739  07B7  0870               	movf	?___lwdiv,w
+   740  07B8  00FB               	movwf	??_send_num
+   741  07B9  087B               	movf	??_send_num,w
+   742  07BA  1283               	bcf	3,5	;RP0=0, select bank0
+   743  07BB  1303               	bcf	3,6	;RP1=0, select bank0
+   744  07BC  00A3               	movwf	send_num@tenth
+   745                           
+   746                           ;PR15.c: 199: data=data%10;
+   747  07BD  300A               	movlw	10
+   748  07BE  00F0               	movwf	?___lwmod
+   749  07BF  3000               	movlw	0
+   750  07C0  00F1               	movwf	?___lwmod+1
+   751  07C1  087A               	movf	send_num@data+1,w
+   752  07C2  01F3               	clrf	?___lwmod+3
+   753  07C3  07F3               	addwf	?___lwmod+3,f
+   754  07C4  0879               	movf	send_num@data,w
+   755  07C5  01F2               	clrf	?___lwmod+2
+   756  07C6  07F2               	addwf	?___lwmod+2,f
+   757  07C7  120A  118A  2604   	fcall	___lwmod
+      +       120A  118A         
+   758  07CC  0871               	movf	?___lwmod+1,w
+   759  07CD  01FA               	clrf	send_num@data+1
+   760  07CE  07FA               	addwf	send_num@data+1,f
+   761  07CF  0870               	movf	?___lwmod,w
+   762  07D0  01F9               	clrf	send_num@data
+   763  07D1  07F9               	addwf	send_num@data,f
+   764                           
+   765                           ;PR15.c: 201: send_char(0x30+tenthou);
+   766  07D2  1283               	bcf	3,5	;RP0=0, select bank0
+   767  07D3  1303               	bcf	3,6	;RP1=0, select bank0
+   768  07D4  0820               	movf	send_num@tenthou,w
+   769  07D5  3E30               	addlw	48
+   770  07D6  120A  118A  25E0   	fcall	_send_char
+      +       120A  118A         
+   771                           
+   772                           ;PR15.c: 202: send_char(0x30+thou);
+   773  07DB  1283               	bcf	3,5	;RP0=0, select bank0
+   774  07DC  1303               	bcf	3,6	;RP1=0, select bank0
+   775  07DD  0821               	movf	send_num@thou,w
+   776  07DE  3E30               	addlw	48
+   777  07DF  120A  118A  25E0   	fcall	_send_char
+      +       120A  118A         
+   778                           
+   779                           ;PR15.c: 203: send_char(0x30+hund);
+   780  07E4  1283               	bcf	3,5	;RP0=0, select bank0
+   781  07E5  1303               	bcf	3,6	;RP1=0, select bank0
+   782  07E6  0822               	movf	send_num@hund,w
+   783  07E7  3E30               	addlw	48
+   784  07E8  120A  118A  25E0   	fcall	_send_char
+      +       120A  118A         
+   785                           
+   786                           ;PR15.c: 204: send_char(0x30+tenth);
+   787  07ED  1283               	bcf	3,5	;RP0=0, select bank0
+   788  07EE  1303               	bcf	3,6	;RP1=0, select bank0
+   789  07EF  0823               	movf	send_num@tenth,w
+   790  07F0  3E30               	addlw	48
+   791  07F1  120A  118A  25E0   	fcall	_send_char
+      +       120A  118A         
+   792                           
+   793                           ;PR15.c: 205: send_char(0x30+data);
+   794  07F6  0879               	movf	send_num@data,w
+   795  07F7  3E30               	addlw	48
+   796  07F8  120A  118A  25E0   	fcall	_send_char
+   797  07FB  0008               	return
+   798  07FC                     __end_of_send_num:	
+   799                           
+   800                           	psect	text2
+   801  0604                     __ptext2:	
+   802 ;; *************** function ___lwmod *****************
+   803 ;; Defined at:
+   804 ;;		line 5 in file "C:\Program Files\Microchip\xc8\v1.21\sources\pic\lwmod.c"
+   805 ;; Parameters:    Size  Location     Type
+   806 ;;  divisor         2    0[COMMON] unsigned int 
+   807 ;;  dividend        2    2[COMMON] unsigned int 
+   808 ;; Auto vars:     Size  Location     Type
+   809 ;;  counter         1    5[COMMON] unsigned char 
+   810 ;; Return value:  Size  Location     Type
+   811 ;;                  2    0[COMMON] unsigned int 
+   812 ;; Registers used:
+   813 ;;		wreg, status,2, status,0
+   814 ;; Tracked objects:
+   815 ;;		On entry : 0/0
+   816 ;;		On exit  : 0/0
+   817 ;;		Unchanged: 0/0
+   818 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   819 ;;      Params:         4       0       0       0       0
+   820 ;;      Locals:         1       0       0       0       0
+   821 ;;      Temps:          1       0       0       0       0
+   822 ;;      Totals:         6       0       0       0       0
+   823 ;;Total ram usage:        6 bytes
+   824 ;; Hardware stack levels used:    1
+   825 ;; This function calls:
+   826 ;;		Nothing
+   827 ;; This function is called by:
+   828 ;;		_send_num
+   829 ;; This function uses a non-reentrant model
+   830 ;;
+   831                           
+   832                           
+   833                           ;psect for function ___lwmod
+   834  0604                     ___lwmod:	
+   835                           
+   836                           ;incstack = 0
+   837                           ; Regs used in ___lwmod: [wreg+status,2+status,0]
+   838  0604  0871               	movf	___lwmod@divisor+1,w
+   839  0605  0470               	iorwf	___lwmod@divisor,w
+   840  0606  1903               	skipnz
+   841  0607  2E31               	goto	l927
+   842  0608  01F5               	clrf	___lwmod@counter
+   843  0609  0AF5               	incf	___lwmod@counter,f
+   844  060A                     l917:	
+   845  060A  1BF1               	btfsc	___lwmod@divisor+1,7
+   846  060B  2E18               	goto	l919
+   847  060C  3001               	movlw	1
+   848  060D                     u375:	
+   849  060D  1003               	clrc
+   850  060E  0DF0               	rlf	___lwmod@divisor,f
+   851  060F  0DF1               	rlf	___lwmod@divisor+1,f
+   852  0610  3EFF               	addlw	-1
+   853  0611  1D03               	skipz
+   854  0612  2E0D               	goto	u375
+   855  0613  3001               	movlw	1
+   856  0614  00F4               	movwf	??___lwmod
+   857  0615  0874               	movf	??___lwmod,w
+   858  0616  07F5               	addwf	___lwmod@counter,f
+   859  0617  2E0A               	goto	l917
+   860  0618                     l919:	
+   861  0618  0871               	movf	___lwmod@divisor+1,w
+   862  0619  0273               	subwf	___lwmod@dividend+1,w
+   863  061A  1D03               	skipz
+   864  061B  2E1E               	goto	u395
+   865  061C  0870               	movf	___lwmod@divisor,w
+   866  061D  0272               	subwf	___lwmod@dividend,w
+   867  061E                     u395:	
+   868  061E  1C03               	skipc
+   869  061F  2E26               	goto	l923
+   870  0620  0870               	movf	___lwmod@divisor,w
+   871  0621  02F2               	subwf	___lwmod@dividend,f
+   872  0622  0871               	movf	___lwmod@divisor+1,w
+   873  0623  1C03               	skipc
+   874  0624  03F3               	decf	___lwmod@dividend+1,f
+   875  0625  02F3               	subwf	___lwmod@dividend+1,f
+   876  0626                     l923:	
+   877  0626  3001               	movlw	1
+   878  0627                     u405:	
+   879  0627  1003               	clrc
+   880  0628  0CF1               	rrf	___lwmod@divisor+1,f
+   881  0629  0CF0               	rrf	___lwmod@divisor,f
+   882  062A  3EFF               	addlw	-1
+   883  062B  1D03               	skipz
+   884  062C  2E27               	goto	u405
+   885  062D  3001               	movlw	1
+   886  062E  02F5               	subwf	___lwmod@counter,f
+   887  062F  1D03               	btfss	3,2
+   888  0630  2E18               	goto	l919
+   889  0631                     l927:	
+   890  0631  0873               	movf	___lwmod@dividend+1,w
+   891  0632  01F1               	clrf	?___lwmod+1
+   892  0633  07F1               	addwf	?___lwmod+1,f
+   893  0634  0872               	movf	___lwmod@dividend,w
+   894  0635  01F0               	clrf	?___lwmod
+   895  0636  07F0               	addwf	?___lwmod,f
+   896  0637  0008               	return
+   897  0638                     __end_of___lwmod:	
+   898                           
+   899                           	psect	text3
+   900  0638                     __ptext3:	
+   901 ;; *************** function ___lwdiv *****************
+   902 ;; Defined at:
+   903 ;;		line 5 in file "C:\Program Files\Microchip\xc8\v1.21\sources\pic\lwdiv.c"
+   904 ;; Parameters:    Size  Location     Type
+   905 ;;  divisor         2    0[COMMON] unsigned int 
+   906 ;;  dividend        2    2[COMMON] unsigned int 
+   907 ;; Auto vars:     Size  Location     Type
+   908 ;;  quotient        2    5[COMMON] unsigned int 
+   909 ;;  counter         1    7[COMMON] unsigned char 
+   910 ;; Return value:  Size  Location     Type
+   911 ;;                  2    0[COMMON] unsigned int 
+   912 ;; Registers used:
+   913 ;;		wreg, status,2, status,0
+   914 ;; Tracked objects:
+   915 ;;		On entry : 0/0
+   916 ;;		On exit  : 0/0
+   917 ;;		Unchanged: 0/0
+   918 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+   919 ;;      Params:         4       0       0       0       0
+   920 ;;      Locals:         3       0       0       0       0
+   921 ;;      Temps:          1       0       0       0       0
+   922 ;;      Totals:         8       0       0       0       0
+   923 ;;Total ram usage:        8 bytes
+   924 ;; Hardware stack levels used:    1
+   925 ;; This function calls:
+   926 ;;		Nothing
+   927 ;; This function is called by:
+   928 ;;		_send_num
+   929 ;; This function uses a non-reentrant model
+   930 ;;
+   931                           
+   932                           
+   933                           ;psect for function ___lwdiv
+   934  0638                     ___lwdiv:	
+   935                           
+   936                           ;incstack = 0
+   937                           ; Regs used in ___lwdiv: [wreg+status,2+status,0]
+   938  0638  01F5               	clrf	___lwdiv@quotient
+   939  0639  01F6               	clrf	___lwdiv@quotient+1
+   940  063A  0871               	movf	___lwdiv@divisor+1,w
+   941  063B  0470               	iorwf	___lwdiv@divisor,w
+   942  063C  1903               	skipnz
+   943  063D  2E6F               	goto	l905
+   944  063E  01F7               	clrf	___lwdiv@counter
+   945  063F  0AF7               	incf	___lwdiv@counter,f
+   946  0640                     l893:	
+   947  0640  1BF1               	btfsc	___lwdiv@divisor+1,7
+   948  0641  2E4E               	goto	l895
+   949  0642  3001               	movlw	1
+   950  0643                     u305:	
+   951  0643  1003               	clrc
+   952  0644  0DF0               	rlf	___lwdiv@divisor,f
+   953  0645  0DF1               	rlf	___lwdiv@divisor+1,f
+   954  0646  3EFF               	addlw	-1
+   955  0647  1D03               	skipz
+   956  0648  2E43               	goto	u305
+   957  0649  3001               	movlw	1
+   958  064A  00F4               	movwf	??___lwdiv
+   959  064B  0874               	movf	??___lwdiv,w
+   960  064C  07F7               	addwf	___lwdiv@counter,f
+   961  064D  2E40               	goto	l893
+   962  064E                     l895:	
+   963  064E  3001               	movlw	1
+   964  064F                     u325:	
+   965  064F  1003               	clrc
+   966  0650  0DF5               	rlf	___lwdiv@quotient,f
+   967  0651  0DF6               	rlf	___lwdiv@quotient+1,f
+   968  0652  3EFF               	addlw	-1
+   969  0653  1D03               	skipz
+   970  0654  2E4F               	goto	u325
+   971  0655  0871               	movf	___lwdiv@divisor+1,w
+   972  0656  0273               	subwf	___lwdiv@dividend+1,w
+   973  0657  1D03               	skipz
+   974  0658  2E5B               	goto	u335
+   975  0659  0870               	movf	___lwdiv@divisor,w
+   976  065A  0272               	subwf	___lwdiv@dividend,w
+   977  065B                     u335:	
+   978  065B  1C03               	skipc
+   979  065C  2E64               	goto	l901
+   980  065D  0870               	movf	___lwdiv@divisor,w
+   981  065E  02F2               	subwf	___lwdiv@dividend,f
+   982  065F  0871               	movf	___lwdiv@divisor+1,w
+   983  0660  1C03               	skipc
+   984  0661  03F3               	decf	___lwdiv@dividend+1,f
+   985  0662  02F3               	subwf	___lwdiv@dividend+1,f
+   986  0663  1475               	bsf	___lwdiv@quotient,0
+   987  0664                     l901:	
+   988  0664  3001               	movlw	1
+   989  0665                     u345:	
+   990  0665  1003               	clrc
+   991  0666  0CF1               	rrf	___lwdiv@divisor+1,f
+   992  0667  0CF0               	rrf	___lwdiv@divisor,f
+   993  0668  3EFF               	addlw	-1
+   994  0669  1D03               	skipz
+   995  066A  2E65               	goto	u345
+   996  066B  3001               	movlw	1
+   997  066C  02F7               	subwf	___lwdiv@counter,f
+   998  066D  1D03               	btfss	3,2
+   999  066E  2E4E               	goto	l895
+  1000  066F                     l905:	
+  1001  066F  0876               	movf	___lwdiv@quotient+1,w
+  1002  0670  01F1               	clrf	?___lwdiv+1
+  1003  0671  07F1               	addwf	?___lwdiv+1,f
+  1004  0672  0875               	movf	___lwdiv@quotient,w
+  1005  0673  01F0               	clrf	?___lwdiv
+  1006  0674  07F0               	addwf	?___lwdiv,f
+  1007  0675  0008               	return
+  1008  0676                     __end_of___lwdiv:	
+  1009                           
+  1010                           	psect	text4
+  1011  0578                     __ptext4:	
+  1012 ;; *************** function _read_ad *****************
+  1013 ;; Defined at:
+  1014 ;;		line 209 in file "../../Source File/PR15.c"
+  1015 ;; Parameters:    Size  Location     Type
+  1016 ;;  channel         1    wreg     unsigned char 
+  1017 ;; Auto vars:     Size  Location     Type
+  1018 ;;  channel         1    1[COMMON] unsigned char 
+  1019 ;;  result          1    2[COMMON] unsigned char 
+  1020 ;; Return value:  Size  Location     Type
+  1021 ;;                  1    wreg      unsigned char 
+  1022 ;; Registers used:
+  1023 ;;		wreg, fsr0l, fsr0h, status,2, status,0
+  1024 ;; Tracked objects:
+  1025 ;;		On entry : 0/0
+  1026 ;;		On exit  : 0/0
+  1027 ;;		Unchanged: 0/0
+  1028 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1029 ;;      Params:         0       0       0       0       0
+  1030 ;;      Locals:         2       0       0       0       0
+  1031 ;;      Temps:          1       0       0       0       0
+  1032 ;;      Totals:         3       0       0       0       0
+  1033 ;;Total ram usage:        3 bytes
+  1034 ;; Hardware stack levels used:    1
+  1035 ;; This function calls:
+  1036 ;;		Nothing
+  1037 ;; This function is called by:
+  1038 ;;		_main
+  1039 ;; This function uses a non-reentrant model
+  1040 ;;
+  1041                           
+  1042                           
+  1043                           ;psect for function _read_ad
+  1044  0578                     _read_ad:	
+  1045                           
+  1046                           ;incstack = 0
+  1047                           ; Regs used in _read_ad: [wreg-fsr0h+status,2+status,0]
+  1048                           ;read_ad@channel stored from wreg
+  1049  0578  00F1               	movwf	read_ad@channel
+  1050                           
+  1051                           ;PR15.c: 210: unsigned char result;
+  1052                           ;PR15.c: 211: switch(channel)
+  1053  0579  2D86               	goto	l871
+  1054  057A                     l96:	
+  1055                           ;PR15.c: 212: {
+  1056                           ;PR15.c: 213: case 0:
+  1057                           
+  1058                           
+  1059                           ;PR15.c: 214: CHS2=0;
+  1060  057A  1283               	bcf	3,5	;RP0=0, select bank0
+  1061  057B  1303               	bcf	3,6	;RP1=0, select bank0
+  1062  057C  129F               	bcf	31,5	;volatile
+  1063                           
+  1064                           ;PR15.c: 215: CHS1=0;
+  1065  057D  121F               	bcf	31,4	;volatile
+  1066                           
+  1067                           ;PR15.c: 216: CHS0=0;
+  1068  057E  119F               	bcf	31,3	;volatile
+  1069                           
+  1070                           ;PR15.c: 217: break;
+  1071  057F  2D8E               	goto	l97
+  1072  0580                     l98:	
+  1073                           ;PR15.c: 218: case 1:
+  1074                           
+  1075                           
+  1076                           ;PR15.c: 219: CHS2=0;
+  1077  0580  1283               	bcf	3,5	;RP0=0, select bank0
+  1078  0581  1303               	bcf	3,6	;RP1=0, select bank0
+  1079  0582  129F               	bcf	31,5	;volatile
+  1080                           
+  1081                           ;PR15.c: 220: CHS1=0;
+  1082  0583  121F               	bcf	31,4	;volatile
+  1083                           
+  1084                           ;PR15.c: 221: CHS0=1;
+  1085  0584  159F               	bsf	31,3	;volatile
+  1086                           
+  1087                           ;PR15.c: 223: }
+  1088                           
+  1089                           ;PR15.c: 222: break;
+  1090  0585  2D8E               	goto	l97
+  1091  0586                     l871:	
+  1092  0586  0871               	movf	read_ad@channel,w
+  1093                           
+  1094                           ; Switch size 1, requested type "space"
+  1095                           ; Number of cases is 2, Range of values is 0 to 1
+  1096                           ; switch strategies available:
+  1097                           ; Name         Instructions Cycles
+  1098                           ; simple_byte            7     4 (average)
+  1099                           ; direct_byte           14     8 (fixed)
+  1100                           ; jumptable            260     6 (fixed)
+  1101                           ;	Chosen strategy is simple_byte
+  1102  0587  3A00               	xorlw	0	; case 0
+  1103  0588  1903               	skipnz
+  1104  0589  2D7A               	goto	l96
+  1105  058A  3A01               	xorlw	1	; case 1
+  1106  058B  1903               	skipnz
+  1107  058C  2D80               	goto	l98
+  1108  058D  2D8E               	goto	l97
+  1109  058E                     l97:	
+  1110                           
+  1111                           ;PR15.c: 224: GO=1;
+  1112  058E  1283               	bcf	3,5	;RP0=0, select bank0
+  1113  058F  1303               	bcf	3,6	;RP1=0, select bank0
+  1114  0590  151F               	bsf	31,2	;volatile
+  1115  0591                     l99:	
+  1116                           ;PR15.c: 225: while(GO);
+  1117                           
+  1118  0591  191F               	btfsc	31,2	;volatile
+  1119  0592  2D91               	goto	l99
+  1120                           
+  1121                           ;PR15.c: 226: result=ADRESH;
+  1122  0593  081E               	movf	30,w	;volatile
+  1123  0594  00F0               	movwf	??_read_ad
+  1124  0595  0870               	movf	??_read_ad,w
+  1125  0596  00F2               	movwf	read_ad@result
+  1126                           
+  1127                           ;PR15.c: 227: return result;
+  1128  0597  0872               	movf	read_ad@result,w
+  1129  0598  0008               	return
+  1130  0599                     __end_of_read_ad:	
+  1131                           
+  1132                           	psect	text5
+  1133  0558                     __ptext5:	
+  1134 ;; *************** function _send_string *****************
+  1135 ;; Defined at:
+  1136 ;;		line 181 in file "../../Source File/PR15.c"
+  1137 ;; Parameters:    Size  Location     Type
+  1138 ;;  s               1    wreg     PTR const unsigned char 
+  1139 ;;		 -> STR_2(17), STR_1(17), 
+  1140 ;; Auto vars:     Size  Location     Type
+  1141 ;;  s               1   11[COMMON] PTR const unsigned char 
+  1142 ;;		 -> STR_2(17), STR_1(17), 
+  1143 ;;  i               1   10[COMMON] unsigned char 
+  1144 ;; Return value:  Size  Location     Type
+  1145 ;;		None               void
+  1146 ;; Registers used:
+  1147 ;;		wreg, fsr0l, fsr0h, status,2, status,0, pclath, cstack
+  1148 ;; Tracked objects:
+  1149 ;;		On entry : 0/0
+  1150 ;;		On exit  : 0/0
+  1151 ;;		Unchanged: 0/0
+  1152 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1153 ;;      Params:         0       0       0       0       0
+  1154 ;;      Locals:         2       0       0       0       0
+  1155 ;;      Temps:          1       0       0       0       0
+  1156 ;;      Totals:         3       0       0       0       0
+  1157 ;;Total ram usage:        3 bytes
+  1158 ;; Hardware stack levels used:    1
+  1159 ;; Hardware stack levels required when called:    2
+  1160 ;; This function calls:
+  1161 ;;		_send_char
+  1162 ;; This function is called by:
+  1163 ;;		_main
+  1164 ;; This function uses a non-reentrant model
+  1165 ;;
+  1166                           
+  1167                           
+  1168                           ;psect for function _send_string
+  1169  0558                     _send_string:	
+  1170                           
+  1171                           ;incstack = 0
+  1172                           ; Regs used in _send_string: [wreg-fsr0h+status,2+status,0+pclath+cstack]
+  1173                           ;send_string@s stored from wreg
+  1174  0558  00FB               	movwf	send_string@s
+  1175                           
+  1176                           ;PR15.c: 182: unsigned char i=0;
+  1177  0559  01FA               	clrf	send_string@i
+  1178  055A                     l971:	
+  1179                           ;PR15.c: 183: while (s && *s)send_char (*s++);
+  1180                           
+  1181  055A  087B               	movf	send_string@s,w
+  1182  055B  1903               	btfsc	3,2
+  1183  055C  0008               	return
+  1184  055D  087B               	movf	send_string@s,w
+  1185  055E  0084               	movwf	4
+  1186  055F  120A  118A  2003   	fcall	stringdir
+      +       120A  118A         
+  1187  0564  3800               	iorlw	0
+  1188  0565  1903               	btfsc	3,2
+  1189  0566  0008               	return
+  1190  0567  087B               	movf	send_string@s,w
+  1191  0568  0084               	movwf	4
+  1192  0569  120A  118A  2003   	fcall	stringdir
+      +       120A  118A         
+  1193  056E  120A  118A  25E0   	fcall	_send_char
+      +       120A  118A         
+  1194  0573  3001               	movlw	1
+  1195  0574  00F9               	movwf	??_send_string
+  1196  0575  0879               	movf	??_send_string,w
+  1197  0576  07FB               	addwf	send_string@s,f
+  1198  0577  2D5A               	goto	l971
+  1199  0578                     __end_of_send_string:	
+  1200                           
+  1201                           	psect	text6
+  1202  05E0                     __ptext6:	
+  1203 ;; *************** function _send_char *****************
+  1204 ;; Defined at:
+  1205 ;;		line 151 in file "../../Source File/PR15.c"
+  1206 ;; Parameters:    Size  Location     Type
+  1207 ;;  data            1    wreg     unsigned char 
+  1208 ;; Auto vars:     Size  Location     Type
+  1209 ;;  data            1    8[COMMON] unsigned char 
+  1210 ;; Return value:  Size  Location     Type
+  1211 ;;		None               void
+  1212 ;; Registers used:
+  1213 ;;		wreg, status,2, status,0, pclath, cstack
+  1214 ;; Tracked objects:
+  1215 ;;		On entry : 0/0
+  1216 ;;		On exit  : 0/0
+  1217 ;;		Unchanged: 0/0
+  1218 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1219 ;;      Params:         0       0       0       0       0
+  1220 ;;      Locals:         1       0       0       0       0
+  1221 ;;      Temps:          0       0       0       0       0
+  1222 ;;      Totals:         1       0       0       0       0
+  1223 ;;Total ram usage:        1 bytes
+  1224 ;; Hardware stack levels used:    1
+  1225 ;; Hardware stack levels required when called:    1
+  1226 ;; This function calls:
+  1227 ;;		_delay
+  1228 ;; This function is called by:
+  1229 ;;		_send_string
+  1230 ;;		_send_num
+  1231 ;; This function uses a non-reentrant model
+  1232 ;;
+  1233                           
+  1234                           
+  1235                           ;psect for function _send_char
+  1236  05E0                     _send_char:	
+  1237                           
+  1238                           ;incstack = 0
+  1239                           ; Regs used in _send_char: [wreg+status,2+status,0+pclath+cstack]
+  1240                           ;send_char@data stored from wreg
+  1241  05E0  00F8               	movwf	send_char@data
+  1242                           
+  1243                           ;PR15.c: 152: RB2=0;
+  1244  05E1  1283               	bcf	3,5	;RP0=0, select bank0
+  1245  05E2  1303               	bcf	3,6	;RP1=0, select bank0
+  1246  05E3  1106               	bcf	6,2	;volatile
+  1247                           
+  1248                           ;PR15.c: 153: RB3=1;
+  1249  05E4  1586               	bsf	6,3	;volatile
+  1250                           
+  1251                           ;PR15.c: 154: PORTC=data;
+  1252  05E5  0878               	movf	send_char@data,w
+  1253  05E6  0087               	movwf	7	;volatile
+  1254                           
+  1255                           ;PR15.c: 155: RB1=1;
+  1256  05E7  1486               	bsf	6,1	;volatile
+  1257                           
+  1258                           ;PR15.c: 156: delay(10);
+  1259  05E8  3000               	movlw	0
+  1260  05E9  00F3               	movwf	?_delay+3
+  1261  05EA  3000               	movlw	0
+  1262  05EB  00F2               	movwf	?_delay+2
+  1263  05EC  3000               	movlw	0
+  1264  05ED  00F1               	movwf	?_delay+1
+  1265  05EE  300A               	movlw	10
+  1266  05EF  00F0               	movwf	?_delay
+  1267  05F0  120A  118A  2599   	fcall	_delay
+      +       120A  118A         
+  1268                           
+  1269                           ;PR15.c: 157: RB1=0;
+  1270  05F5  1283               	bcf	3,5	;RP0=0, select bank0
+  1271  05F6  1303               	bcf	3,6	;RP1=0, select bank0
+  1272  05F7  1086               	bcf	6,1	;volatile
+  1273                           
+  1274                           ;PR15.c: 158: delay(10);
+  1275  05F8  3000               	movlw	0
+  1276  05F9  00F3               	movwf	?_delay+3
+  1277  05FA  3000               	movlw	0
+  1278  05FB  00F2               	movwf	?_delay+2
+  1279  05FC  3000               	movlw	0
+  1280  05FD  00F1               	movwf	?_delay+1
+  1281  05FE  300A               	movlw	10
+  1282  05FF  00F0               	movwf	?_delay
+  1283  0600  120A  118A  2599   	fcall	_delay
+  1284  0603  0008               	return
+  1285  0604                     __end_of_send_char:	
+  1286                           
+  1287                           	psect	text7
+  1288  0542                     __ptext7:	
+  1289 ;; *************** function _lcd_goto *****************
+  1290 ;; Defined at:
+  1291 ;;		line 162 in file "../../Source File/PR15.c"
+  1292 ;; Parameters:    Size  Location     Type
+  1293 ;;  data            1    wreg     unsigned char 
+  1294 ;; Auto vars:     Size  Location     Type
+  1295 ;;  data            1   10[COMMON] unsigned char 
+  1296 ;; Return value:  Size  Location     Type
+  1297 ;;		None               void
+  1298 ;; Registers used:
+  1299 ;;		wreg, status,2, status,0, pclath, cstack
+  1300 ;; Tracked objects:
+  1301 ;;		On entry : 0/0
+  1302 ;;		On exit  : 0/0
+  1303 ;;		Unchanged: 0/0
+  1304 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1305 ;;      Params:         0       0       0       0       0
+  1306 ;;      Locals:         1       0       0       0       0
+  1307 ;;      Temps:          1       0       0       0       0
+  1308 ;;      Totals:         2       0       0       0       0
+  1309 ;;Total ram usage:        2 bytes
+  1310 ;; Hardware stack levels used:    1
+  1311 ;; Hardware stack levels required when called:    2
+  1312 ;; This function calls:
+  1313 ;;		_send_config
+  1314 ;; This function is called by:
+  1315 ;;		_main
+  1316 ;; This function uses a non-reentrant model
+  1317 ;;
+  1318                           
+  1319                           
+  1320                           ;psect for function _lcd_goto
+  1321  0542                     _lcd_goto:	
+  1322                           
+  1323                           ;incstack = 0
+  1324                           ; Regs used in _lcd_goto: [wreg+status,2+status,0+pclath+cstack]
+  1325                           ;lcd_goto@data stored from wreg
+  1326  0542  00FA               	movwf	lcd_goto@data
+  1327                           
+  1328                           ;PR15.c: 163: if(data<16)
+  1329  0543  3010               	movlw	16
+  1330  0544  027A               	subwf	lcd_goto@data,w
+  1331  0545  1803               	skipnc
+  1332  0546  2D4D               	goto	l961
+  1333                           
+  1334                           ;PR15.c: 164: {
+  1335                           ;PR15.c: 165: send_config(0x80+data);
+  1336  0547  087A               	movf	lcd_goto@data,w
+  1337  0548  3E80               	addlw	128
+  1338  0549  120A  118A  25BC   	fcall	_send_config
+  1339                           
+  1340                           ;PR15.c: 166: }
+  1341  054C  0008               	return
+  1342  054D                     l961:	
+  1343                           
+  1344                           ;PR15.c: 167: else
+  1345                           ;PR15.c: 168: {
+  1346                           ;PR15.c: 169: data=data-20;
+  1347  054D  087A               	movf	lcd_goto@data,w
+  1348  054E  3EEC               	addlw	236
+  1349  054F  00F9               	movwf	??_lcd_goto
+  1350  0550  0879               	movf	??_lcd_goto,w
+  1351  0551  00FA               	movwf	lcd_goto@data
+  1352                           
+  1353                           ;PR15.c: 170: send_config(0xc0+data);
+  1354  0552  087A               	movf	lcd_goto@data,w
+  1355  0553  3EC0               	addlw	192
+  1356  0554  120A  118A  25BC   	fcall	_send_config
+  1357  0557  0008               	return
+  1358  0558                     __end_of_lcd_goto:	
+  1359                           
+  1360                           	psect	text8
+  1361  0530                     __ptext8:	
+  1362 ;; *************** function _lcd_clr *****************
+  1363 ;; Defined at:
+  1364 ;;		line 175 in file "../../Source File/PR15.c"
+  1365 ;; Parameters:    Size  Location     Type
+  1366 ;;		None
+  1367 ;; Auto vars:     Size  Location     Type
+  1368 ;;		None
+  1369 ;; Return value:  Size  Location     Type
+  1370 ;;		None               void
+  1371 ;; Registers used:
+  1372 ;;		wreg, status,2, status,0, pclath, cstack
+  1373 ;; Tracked objects:
+  1374 ;;		On entry : 0/0
+  1375 ;;		On exit  : 0/0
+  1376 ;;		Unchanged: 0/0
+  1377 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1378 ;;      Params:         0       0       0       0       0
+  1379 ;;      Locals:         0       0       0       0       0
+  1380 ;;      Temps:          0       0       0       0       0
+  1381 ;;      Totals:         0       0       0       0       0
+  1382 ;;Total ram usage:        0 bytes
+  1383 ;; Hardware stack levels used:    1
+  1384 ;; Hardware stack levels required when called:    2
+  1385 ;; This function calls:
+  1386 ;;		_send_config
+  1387 ;;		_delay
+  1388 ;; This function is called by:
+  1389 ;;		_main
+  1390 ;; This function uses a non-reentrant model
+  1391 ;;
+  1392                           
+  1393                           
+  1394                           ;psect for function _lcd_clr
+  1395  0530                     _lcd_clr:	
+  1396                           
+  1397                           ;PR15.c: 176: send_config(0x01);
+  1398                           
+  1399                           ;incstack = 0
+  1400                           ; Regs used in _lcd_clr: [wreg+status,2+status,0+pclath+cstack]
+  1401  0530  3001               	movlw	1
+  1402  0531  120A  118A  25BC   	fcall	_send_config
+      +       120A  118A         
+  1403                           
+  1404                           ;PR15.c: 177: delay(600);
+  1405  0536  3000               	movlw	0
+  1406  0537  00F3               	movwf	?_delay+3
+  1407  0538  3000               	movlw	0
+  1408  0539  00F2               	movwf	?_delay+2
+  1409  053A  3002               	movlw	2
+  1410  053B  00F1               	movwf	?_delay+1
+  1411  053C  3058               	movlw	88
+  1412  053D  00F0               	movwf	?_delay
+  1413  053E  120A  118A  2599   	fcall	_delay
+  1414  0541  0008               	return
+  1415  0542                     __end_of_lcd_clr:	
+  1416                           
+  1417                           	psect	text9
+  1418  05BC                     __ptext9:	
+  1419 ;; *************** function _send_config *****************
+  1420 ;; Defined at:
+  1421 ;;		line 140 in file "../../Source File/PR15.c"
+  1422 ;; Parameters:    Size  Location     Type
+  1423 ;;  data            1    wreg     unsigned char 
+  1424 ;; Auto vars:     Size  Location     Type
+  1425 ;;  data            1    8[COMMON] unsigned char 
+  1426 ;; Return value:  Size  Location     Type
+  1427 ;;		None               void
+  1428 ;; Registers used:
+  1429 ;;		wreg, status,2, status,0, pclath, cstack
+  1430 ;; Tracked objects:
+  1431 ;;		On entry : 0/0
+  1432 ;;		On exit  : 0/0
+  1433 ;;		Unchanged: 0/0
+  1434 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1435 ;;      Params:         0       0       0       0       0
+  1436 ;;      Locals:         1       0       0       0       0
+  1437 ;;      Temps:          0       0       0       0       0
+  1438 ;;      Totals:         1       0       0       0       0
+  1439 ;;Total ram usage:        1 bytes
+  1440 ;; Hardware stack levels used:    1
+  1441 ;; Hardware stack levels required when called:    1
+  1442 ;; This function calls:
+  1443 ;;		_delay
+  1444 ;; This function is called by:
+  1445 ;;		_main
+  1446 ;;		_lcd_goto
+  1447 ;;		_lcd_clr
+  1448 ;; This function uses a non-reentrant model
+  1449 ;;
+  1450                           
+  1451                           
+  1452                           ;psect for function _send_config
+  1453  05BC                     _send_config:	
+  1454                           
+  1455                           ;incstack = 0
+  1456                           ; Regs used in _send_config: [wreg+status,2+status,0+pclath+cstack]
+  1457                           ;send_config@data stored from wreg
+  1458  05BC  00F8               	movwf	send_config@data
+  1459                           
+  1460                           ;PR15.c: 141: RB2=0;
+  1461  05BD  1283               	bcf	3,5	;RP0=0, select bank0
+  1462  05BE  1303               	bcf	3,6	;RP1=0, select bank0
+  1463  05BF  1106               	bcf	6,2	;volatile
+  1464                           
+  1465                           ;PR15.c: 142: RB3=0;
+  1466  05C0  1186               	bcf	6,3	;volatile
+  1467                           
+  1468                           ;PR15.c: 143: PORTC=data;
+  1469  05C1  0878               	movf	send_config@data,w
+  1470  05C2  0087               	movwf	7	;volatile
+  1471                           
+  1472                           ;PR15.c: 144: RB1=1;
+  1473  05C3  1486               	bsf	6,1	;volatile
+  1474                           
+  1475                           ;PR15.c: 145: delay(50);
+  1476  05C4  3000               	movlw	0
+  1477  05C5  00F3               	movwf	?_delay+3
+  1478  05C6  3000               	movlw	0
+  1479  05C7  00F2               	movwf	?_delay+2
+  1480  05C8  3000               	movlw	0
+  1481  05C9  00F1               	movwf	?_delay+1
+  1482  05CA  3032               	movlw	50
+  1483  05CB  00F0               	movwf	?_delay
+  1484  05CC  120A  118A  2599   	fcall	_delay
+      +       120A  118A         
+  1485                           
+  1486                           ;PR15.c: 146: RB1=0;
+  1487  05D1  1283               	bcf	3,5	;RP0=0, select bank0
+  1488  05D2  1303               	bcf	3,6	;RP1=0, select bank0
+  1489  05D3  1086               	bcf	6,1	;volatile
+  1490                           
+  1491                           ;PR15.c: 147: delay(50);
+  1492  05D4  3000               	movlw	0
+  1493  05D5  00F3               	movwf	?_delay+3
+  1494  05D6  3000               	movlw	0
+  1495  05D7  00F2               	movwf	?_delay+2
+  1496  05D8  3000               	movlw	0
+  1497  05D9  00F1               	movwf	?_delay+1
+  1498  05DA  3032               	movlw	50
+  1499  05DB  00F0               	movwf	?_delay
+  1500  05DC  120A  118A  2599   	fcall	_delay
+  1501  05DF  0008               	return
+  1502  05E0                     __end_of_send_config:	
+  1503                           
+  1504                           	psect	text10
+  1505  0599                     __ptext10:	
+  1506 ;; *************** function _delay *****************
+  1507 ;; Defined at:
+  1508 ;;		line 135 in file "../../Source File/PR15.c"
+  1509 ;; Parameters:    Size  Location     Type
+  1510 ;;  data            4    0[COMMON] unsigned long 
+  1511 ;; Auto vars:     Size  Location     Type
+  1512 ;;		None
+  1513 ;; Return value:  Size  Location     Type
+  1514 ;;		None               void
+  1515 ;; Registers used:
+  1516 ;;		wreg
+  1517 ;; Tracked objects:
+  1518 ;;		On entry : 0/0
+  1519 ;;		On exit  : 0/0
+  1520 ;;		Unchanged: 0/0
+  1521 ;; Data sizes:     COMMON   BANK0   BANK1   BANK3   BANK2
+  1522 ;;      Params:         4       0       0       0       0
+  1523 ;;      Locals:         0       0       0       0       0
+  1524 ;;      Temps:          4       0       0       0       0
+  1525 ;;      Totals:         8       0       0       0       0
+  1526 ;;Total ram usage:        8 bytes
+  1527 ;; Hardware stack levels used:    1
+  1528 ;; This function calls:
+  1529 ;;		Nothing
+  1530 ;; This function is called by:
+  1531 ;;		_send_config
+  1532 ;;		_send_char
+  1533 ;;		_lcd_clr
+  1534 ;; This function uses a non-reentrant model
+  1535 ;;
+  1536                           
+  1537                           
+  1538                           ;psect for function _delay
+  1539  0599                     _delay:	
+  1540                           
+  1541                           ;PR15.c: 136: for( ;data>0;data-=1);
+  1542                           
+  1543                           ;incstack = 0
+  1544                           ; Regs used in _delay: [wreg]
+  1545  0599  0873               	movf	delay@data+3,w
+  1546  059A  0472               	iorwf	delay@data+2,w
+  1547  059B  0471               	iorwf	delay@data+1,w
+  1548  059C  0470               	iorwf	delay@data,w
+  1549  059D  1903               	btfsc	3,2
+  1550  059E  0008               	return
+  1551  059F  3001               	movlw	1
+  1552  05A0  00F4               	movwf	??_delay
+  1553  05A1  3000               	movlw	0
+  1554  05A2  00F5               	movwf	??_delay+1
+  1555  05A3  3000               	movlw	0
+  1556  05A4  00F6               	movwf	??_delay+2
+  1557  05A5  3000               	movlw	0
+  1558  05A6  00F7               	movwf	??_delay+3
+  1559  05A7  0874               	movf	??_delay,w
+  1560  05A8  02F0               	subwf	delay@data,f
+  1561  05A9  0875               	movf	??_delay+1,w
+  1562  05AA  1C03               	skipc
+  1563  05AB  0F75               	incfsz	??_delay+1,w
+  1564  05AC  2DAE               	goto	u275
+  1565  05AD  2DAF               	goto	u276
+  1566  05AE                     u275:	
+  1567  05AE  02F1               	subwf	delay@data+1,f
+  1568  05AF                     u276:	
+  1569  05AF  0876               	movf	??_delay+2,w
+  1570  05B0  1C03               	skipc
+  1571  05B1  0F76               	incfsz	??_delay+2,w
+  1572  05B2  2DB4               	goto	u277
+  1573  05B3  2DB5               	goto	u278
+  1574  05B4                     u277:	
+  1575  05B4  02F2               	subwf	delay@data+2,f
+  1576  05B5                     u278:	
+  1577  05B5  0877               	movf	??_delay+3,w
+  1578  05B6  1C03               	skipc
+  1579  05B7  0F77               	incfsz	??_delay+3,w
+  1580  05B8  2DBA               	goto	u279
+  1581  05B9  2D99               	goto	_delay
+  1582  05BA                     u279:	
+  1583  05BA  02F3               	subwf	delay@data+3,f
+  1584  05BB  2D99               	goto	_delay
+  1585  05BC                     __end_of_delay:	
+  1586  007E                     btemp	set	126	;btemp
+  1587  007E                     wtemp0	set	126
+
+
+Data Sizes:
+    Strings     34
+    Constant    0
+    Data        0
+    BSS         0
+    Persistent  0
+    Stack       0
+
+Auto Spaces:
+    Space          Size  Autos    Used
+    COMMON           14     14      14
+    BANK0            80      6       6
+    BANK1            80      0       0
+    BANK3            96      0       0
+    BANK2            96      0       0
+
+Pointer List with Targets:
+
+    ?___lwmod	unsigned int  size(1) Largest target is 0
+
+    ?___lwdiv	unsigned int  size(1) Largest target is 0
+
+    send_string@s	PTR const unsigned char  size(1) Largest target is 17
+		 -> STR_2(CODE[17]), STR_1(CODE[17]), 
+
+
+Critical Paths under _main in COMMON
+
+    _main->_send_string
+    _main->_send_num
+    _send_num->_send_char
+    _send_string->_send_char
+    _send_char->_delay
+    _lcd_goto->_send_config
+    _lcd_clr->_send_config
+    _send_config->_delay
+
+Critical Paths under _main in BANK0
+
+    _main->_send_num
+
+Critical Paths under _main in BANK1
+
+    None.
+
+Critical Paths under _main in BANK3
+
+    None.
+
+Critical Paths under _main in BANK2
+
+    None.
+
+Call Graph Tables:
+
+ ---------------------------------------------------------------------------------
+ (Depth) Function   	        Calls       Base Space   Used Autos Params    Refs
+ ---------------------------------------------------------------------------------
+ (0) _main                                                 4     4      0    1290
+                                             12 COMMON     2     2      0
+                                              4 BANK0      2     2      0
+                        _send_config
+                            _lcd_clr
+                           _lcd_goto
+                        _send_string
+                            _read_ad
+                           _send_num
+ ---------------------------------------------------------------------------------
+ (1) _send_num                                             7     5      2     682
+                                              9 COMMON     3     1      2
+                                              0 BANK0      4     4      0
+                          _send_char
+                            ___lwdiv
+                            ___lwmod
+ ---------------------------------------------------------------------------------
+ (2) ___lwmod                                              6     2      4     159
+                                              0 COMMON     6     2      4
+ ---------------------------------------------------------------------------------
+ (2) ___lwdiv                                              8     4      4     162
+                                              0 COMMON     8     4      4
+ ---------------------------------------------------------------------------------
+ (1) _read_ad                                              3     3      0      45
+                                              0 COMMON     3     3      0
+ ---------------------------------------------------------------------------------
+ (1) _send_string                                          3     3      0     135
+                                              9 COMMON     3     3      0
+                          _send_char
+ ---------------------------------------------------------------------------------
+ (2) _send_char                                            1     1      0      67
+                                              8 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (1) _lcd_goto                                             2     2      0     156
+                                              9 COMMON     2     2      0
+                        _send_config
+ ---------------------------------------------------------------------------------
+ (1) _lcd_clr                                              0     0      0     112
+                        _send_config
+                              _delay
+ ---------------------------------------------------------------------------------
+ (2) _send_config                                          1     1      0      67
+                                              8 COMMON     1     1      0
+                              _delay
+ ---------------------------------------------------------------------------------
+ (3) _delay                                                8     4      4      45
+                                              0 COMMON     8     4      4
+ ---------------------------------------------------------------------------------
+ Estimated maximum stack depth 3
+ ---------------------------------------------------------------------------------
+
+ Call Graph Graphs:
+
+ _main (ROOT)
+   _send_config
+     _delay
+   _lcd_clr
+     _send_config
+       _delay
+     _delay
+   _lcd_goto
+     _send_config
+       _delay
+   _send_string
+     _send_char
+       _delay
+   _read_ad
+   _send_num
+     _send_char
+       _delay
+     ___lwdiv
+     ___lwmod
+
+ Address spaces:
+Name               Size   Autos  Total    Cost      Usage
+BITCOMMON            E      0       0       0        0.0%
+EEDATA             100      0       0       0        0.0%
+NULL                 0      0       0       0        0.0%
+CODE                 0      0       0       0        0.0%
+COMMON               E      E       E       1      100.0%
+BITSFR0              0      0       0       1        0.0%
+SFR0                 0      0       0       1        0.0%
+BITSFR1              0      0       0       2        0.0%
+SFR1                 0      0       0       2        0.0%
+STACK                0      0       3       2        0.0%
+ABS                  0      0       0       3        0.0%
+BITBANK0            50      0       0       4        0.0%
+BITSFR3              0      0       0       4        0.0%
+SFR3                 0      0       0       4        0.0%
+BANK0               50      6       6       5        7.5%
+BITSFR2              0      0       0       5        0.0%
+SFR2                 0      0       0       5        0.0%
+BITBANK1            50      0       0       6        0.0%
+BANK1               50      0       0       7        0.0%
+BITBANK3            60      0       0       8        0.0%
+BANK3               60      0       0       9        0.0%
+BITBANK2            60      0       0      10        0.0%
+BANK2               60      0       0      11        0.0%
+DATA                 0      0       0      12        0.0%
+
+
+Microchip Technology PIC Macro Assembler V1.21 build 54009 
+Symbol Table                                                                                   Wed Jul 22 17:37:07 2015
+
+                      pc 0002              __CFG_CP$OFF 0000                       l54 06C0  
+                     l55 06C8                       l96 057A                       l97 058E  
+                     _GO 00FA                       l98 0580                       l99 0591  
+                     fsr 0004                      l901 0664                      l905 066F  
+                    l923 0626                      l917 060A                      l871 0586  
+                    l919 0618                      l927 0631                      l961 054D  
+                    l971 055A                      l893 0640                      l895 064E  
+                    _RB0 0030                      _RA2 002A                      _RB1 0031  
+                    _RB2 0032                      _RB3 0033                      _RA5 002D  
+                    _RB4 0034                      _RB5 0035                      u305 0643  
+                    u325 064F                      u405 0627                      u335 065B  
+                    u345 0665             __CFG_CPD$OFF 0000                      u275 05AE  
+                    u276 05AF                      u277 05B4                      u278 05B5  
+                    u279 05BA                      u375 060D                      u395 061E  
+                    fsr0 0004             __CFG_FOSC$HS 0000          send_config@data 0078  
+           __CFG_LVP$OFF 0000                     l1023 06F8                     l1007 06B7  
+                   _CHS0 00FB                     _CHS1 00FC                     _CHS2 00FD  
+                   STR_1 0009                     STR_2 001A             __CFG_WRT$OFF 0000  
+                   _main 0676                     btemp 007E             lcd_goto@data 007A  
+                   start 0000                    ?_main 0070            __CFG_WDTE$OFF 0000  
+         __CFG_DEBUG$OFF 0000          __end_of___lwdiv 0676          __end_of___lwmod 0638  
+                  _PORTC 0007                    _TRISA 0085                    _TRISB 0086  
+                  _TRISC 0087            __CFG_PWRTE$ON 0000          __end_of_lcd_clr 0542  
+                  _delay 0599          __end_of_read_ad 0599           __CFG_BOREN$OFF 0000  
+                  pclath 000A                    status 0003                    wtemp0 007E  
+        __initialization 07FC             __end_of_main 072A                   ??_main 007C  
+                 ?_delay 0070             ?_send_config 0070                   _ADCON0 001F  
+                 _ADCON1 009F                   _ADRESH 001E             ?_send_string 0070  
+       __end_of_lcd_goto 0558                ??___lwdiv 0074                ??___lwmod 0074  
+        send_num@tenthou 0020                ??_lcd_clr 0079         __end_of_send_num 07FC  
+              ??_read_ad 0070  __end_of__initialization 07FC           __pcstackCOMMON 0070  
+          __end_of_delay 05BC                  ??_delay 0074               __pmaintext 0676  
+     __size_of_send_char 0024                ?_lcd_goto 0070               __stringtab 0003  
+   __size_of_send_config 0024     __size_of_send_string 0020                ?_send_num 0079  
+                ___lwdiv 0638                  ___lwmod 0604                  __ptext1 072A  
+                __ptext2 0604                  __ptext3 0638                  __ptext4 0578  
+                __ptext5 0558                  __ptext6 05E0                  __ptext7 0542  
+                __ptext8 0530                  __ptext9 05BC                  _lcd_clr 0530  
+                _read_ad 0578               ??_lcd_goto 0079     end_of_initialization 07FC  
+      __end_of_send_char 0604               ??_send_num 007B            send_char@data 0078  
+          send_num@tenth 0023      start_initialization 07FC            __pcstackBANK0 0020  
+    __end_of__stringdata 002B        __size_of_lcd_goto 0016         ___lwdiv@dividend 0072  
+      __size_of_send_num 00D2                 ?___lwdiv 0070                 ?___lwmod 0070  
+              __pstrings 0003                 ?_lcd_clr 0070                 ?_read_ad 0070  
+          ??_send_config 0078         ___lwdiv@quotient 0075           __size_of_delay 0023  
+         read_ad@channel 0071                delay@data 0070            ??_send_string 0079  
+              _send_char 05E0              __stringbase 0008              __stringdata 0009  
+           send_num@data 0079             send_num@hund 0022             send_num@thou 0021  
+    __end_of_send_config 05E0               ?_send_char 0070             send_string@i 007A  
+           send_string@s 007B      __end_of_send_string 0578         __size_of___lwdiv 003E  
+       __size_of___lwmod 0034       __end_of__stringtab 0009         __size_of_lcd_clr 0012  
+       __size_of_read_ad 0021          ___lwdiv@divisor 0070          ___lwdiv@counter 0077  
+               __ptext10 0599                 _lcd_goto 0542            __size_of_main 00B4  
+               _send_num 072A            read_ad@result 0072                 main@mode 0025  
+               main@temp 0024              _send_config 05BC              _send_string 0558  
+       ___lwmod@dividend 0072              ??_send_char 0078                stringcode 0003  
+        ___lwmod@divisor 0070          ___lwmod@counter 0075                 stringdir 0003  
+               stringtab 0003  
